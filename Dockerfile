@@ -16,3 +16,6 @@ RUN su esp8266 -c "mkdir ~/ESP8266_SDK"
 RUN su esp8266 -c "wget -q http://filez.zoobab.com/esp8266/esptool-0.0.2.zip -O ~/ESP8266_SDK/esptool-0.0.2.zip"
 RUN su esp8266 -c "cd ~/ESP8266_SDK; unzip esptool-0.0.2.zip"
 RUN su esp8266 -c "cd ~/ESP8266_SDK/esptool; sed -i 's/WINDOWS/LINUX/g' Makefile; make"
+
+WORKDIR /data
+VOLUME /data
